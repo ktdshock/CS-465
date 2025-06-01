@@ -4,20 +4,21 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-// ✅ Handlebars partials support
+//  Handlebars partials support
 const hbs = require('hbs');
 
-// ✅ Route files
+//  Route files
 var indexRouter = require('./app_server/routes/index');
-var travelRouter = require('./app_server/routes/travel'); // <-- you’ll create this soon
+var travelRouter = require('./app_server/routes/travel'); 
+console.log('travelRouter is:', travelRouter);
 
 var app = express();
 
-// ✅ View engine setup (pointing to app_server/views)
+//  View engine setup (pointing to app_server/views)
 app.set('views', path.join(__dirname, 'app_server', 'views'));
 app.set('view engine', 'hbs');
 
-// ✅ Register partials directory
+//  Register partials directory
 hbs.registerPartials(path.join(__dirname, 'app_server', 'views', 'partials'));
 
 app.use(logger('dev'));
@@ -26,9 +27,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// ✅ Routes
+//  Routes
 app.use('/', indexRouter);
-app.use('/travel', travelRouter); // <-- this is for the travel page
+app.use('/travel', travelRouter); 
 
 // 404 handler
 app.use(function(req, res, next) {
