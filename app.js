@@ -1,24 +1,31 @@
+console.log("app_api router loaded");
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-//  Handlebars partials support
+// Handlebars partials support
 const hbs = require('hbs');
 
-//  Route files
+// Connect to MongoDB using app_api db.js
+require('./app_api/models/db');
+
+// Import route files
 var indexRouter = require('./app_server/routes/index');
 var travelRouter = require('./app_server/routes/travel'); 
+const apiRouter = require('./app_api/routes'); // <- NEW
+
 console.log('travelRouter is:', travelRouter);
 
 var app = express();
 
-//  View engine setup (pointing to app_server/views)
+// View engine setup (pointing to app_server/views)
 app.set('views', path.join(__dirname, 'app_server', 'views'));
 app.set('view engine', 'hbs');
 
-//  Register partials directory
+// Register partials directory
 hbs.registerPartials(path.join(__dirname, 'app_server', 'views', 'partials'));
 
 app.use(logger('dev'));
@@ -27,9 +34,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//  Routes
+// Routes
+app.use('/api', apiRouter);      // <- NEW
 app.use('/', indexRouter);
-app.use('/travel', travelRouter); 
+app.use('/travel', travelRouter);
 
 // 404 handler
 app.use(function(req, res, next) {
