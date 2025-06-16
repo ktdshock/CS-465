@@ -3,7 +3,7 @@ const Trip = mongoose.model('trips');
 
 const travelList = async function(req, res) {
   try {
-    const trips = await Trip.find(); // Fetch trips from MongoDB
+    const trips = await Trip.find();
     res.render('travel', { 
       title: 'Travlr Getaways',
       trips 
