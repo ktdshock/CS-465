@@ -11,6 +11,7 @@ const hbs = require('hbs');
 
 // Connect to MongoDB using app_api db.js
 require('./app_api/models/db');
+require('./app_api/models/users');
 
 // Import route files
 var indexRouter = require('./app_server/routes/index');
