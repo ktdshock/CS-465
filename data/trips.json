@@ -1,0 +1,32 @@
+[
+  {
+    "code": "GAL01",
+    "name": "Gale Reef",
+    "length": "7 nights",
+    "start": "2025-07-01T00:00:00.000Z",
+    "resort": "Gale Island Resort",
+    "perPerson": "$2,199",
+    "image": "reef1.jpg",
+    "description": "Relax on the sun-soaked beaches of Gale Reef. Perfect for snorkeling, diving, and unforgettable sunsets."
+  },
+  {
+    "code": "DAW02",
+    "name": "Dawson's Reef",
+    "length": "5 nights",
+    "start": "2025-08-10T00:00:00.000Z",
+    "resort": "Dawson Bay Lodge",
+    "perPerson": "$1,899",
+    "image": "reef2.jpg",
+    "description": "Enjoy crystal-clear waters and luxury amenities at Dawson's Reef. Ideal for couples and adventure seekers."
+  },
+  {
+    "code": "CLA03",
+    "name": "Claire's Reef",
+    "length": "6 nights",
+    "start": "2025-09-20T00:00:00.000Z",
+    "resort": "Claire Coral Retreat",
+    "perPerson": "$2,099",
+    "image": "reef3.jpg",
+    "description": "Unwind at Claire’s Reef with private bungalows, gourmet dining, and vibrant coral gardens to explore."
+  }
+]

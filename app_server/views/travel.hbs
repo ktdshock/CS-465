@@ -1,0 +1,55 @@
+<!-- Hero Section -->
+<div class="jumbotron jumbotron-fluid" style="background-image: url('/images/beach100.jpg'); background-size: cover; background-position: center;">
+  <div class="container text-center" style="background-color: rgba(255, 255, 255, 0.7); padding: 2rem; border-radius: 10px;">
+    <h1 class="display-4 font-weight-bold text-dark">Find Your Next Adventure</h1>
+    <p class="lead text-dark">Explore our best travel packages around the world.</p>
+  </div>
+</div>
+
+<!-- Success Message + Add Trip Button -->
+<div class="container mt-4">
+  {{#if successMessage}}
+    <div class="alert alert-success" role="alert">
+      {{successMessage}}
+    </div>
+  {{/if}}
+
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="mb-0">Available Trips</h2>
+    <a href="/travel/add" class="btn btn-primary">Add New Trip</a>
+  </div>
+</div>
+
+<!-- Trips Grid -->
+<div class="container">
+  <div class="row">
+    {{#each trips}}
+    <div class="col-md-3 mb-4 d-flex">
+      <div class="card h-100 shadow-sm w-100">
+        <img src="/images/{{this.image}}" class="card-img-top" alt="{{this.name}}">
+        <div class="card-body">
+          <h5 class="card-title">{{this.name}}</h5>
+          <p class="card-text">
+            <strong>Length:</strong> {{this.length}}<br>
+            <strong>Start:</strong> {{this.start}}<br>
+            <strong>Resort:</strong> {{this.resort}}<br>
+            <strong>Price:</strong> {{this.perPerson}}<br>
+            <em>{{this.description}}</em>
+          </p>
+
+          <!-- Edit Button -->
+          <a href="/travel/edit/{{this.code}}" class="btn btn-sm btn-outline-primary">Edit</a>
+
+          <!-- Delete Button -->
+          <form action="/travel/delete/{{this.code}}" method="POST" style="display:inline;">
+            <button type="submit" class="btn btn-sm btn-outline-danger"
+              onclick="return confirm('Are you sure you want to delete this trip?');">
+              Delete
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>

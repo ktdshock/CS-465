@@ -1,0 +1,57 @@
+<div class="container mt-5">
+  <div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-3 bg-primary text-white p-4">
+      <h4>My Project</h4>
+      <ul class="nav flex-column mt-4">
+        <li class="nav-item"><a class="nav-link text-white" href="/travel">Travel</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#">Reservations</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#">Users</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#">Settings</a></li>
+      </ul>
+    </div>
+
+    <!-- Main form area -->
+    <div class="col-md-9 p-5">
+      <h3 class="mb-4">Group Name</h3>
+      <form>
+        <div class="mb-3">
+          <label>ID:</label>
+          <input type="text" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+          <label>Destination:</label>
+          <input type="text" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+          <label>Length of Stay:</label>
+          <div class="d-flex gap-2">
+            <input type="number" class="form-control w-25" value="3" min="0" />
+            <span>Nights</span>
+            <input type="number" class="form-control w-25" value="3" min="0" />
+            <span>Days</span>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label>Start Date:</label>
+          <input type="date" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+          <label>Resort:</label>
+          <input type="text" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+          <label>Per Person:</label>
+          <input type="text" class="form-control" />
+        </div>
+
+        <button class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
